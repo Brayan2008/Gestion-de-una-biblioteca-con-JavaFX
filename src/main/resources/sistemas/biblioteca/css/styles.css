@@ -1,0 +1,13 @@
+.titlebienvenido{
+    -fx-font-size: 23;
+    -fx-font-family: "Arial Black";
+    -fx-font-weight: 800;     
+    -fx-text-fill: white;
+}
+.greenbutton{
+    -fx-background-radius: 11;
+    -fx-background-color:  #60BF81;
+    -fx-text-fill: white;
+    -fx-font-weight: 800;
+    -fx-font-size: 13;
+}

@@ -1,7 +1,9 @@
-package sistemas.biblioteca;
+package sistemas.biblioteca.controllers;
 
 import java.io.IOException;
 import javafx.fxml.FXML;
+
+import sistemas.biblioteca.App;
 
 public class SecondaryController {
 
