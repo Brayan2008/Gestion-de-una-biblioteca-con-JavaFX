@@ -1,13 +1,29 @@
-.titlebienvenido{
+/*Archivo CSS personalizado para los componentes de JavaFX */
+
+/* Clase titulo  */
+.titlebienvenido {
     -fx-font-size: 23;
     -fx-font-family: "Arial Black";
-    -fx-font-weight: 800;     
+    -fx-font-weight: 800;
     -fx-text-fill: white;
 }
-.greenbutton{
+
+/* Clase boton  */
+.greenbutton {
     -fx-background-radius: 11;
-    -fx-background-color:  #60BF81;
+    -fx-background-color: #60BF81;
     -fx-text-fill: white;
     -fx-font-weight: 800;
     -fx-font-size: 13;
+}
+
+.greenbutton:hover {
+    -fx-background-color: black;
+    -fx-animated: true;
+}
+
+/*Clase para los campos de ingreso */
+.FieldLogin:focus-within {
+    -fx-background-color: gray;
+    -fx-text-fill: white;
 }

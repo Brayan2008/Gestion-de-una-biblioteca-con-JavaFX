@@ -32,7 +32,7 @@
                   <Font name="Arial Black" size="22.0" />
                </font>
             </Label>
-            <TextField fx:id="user_field" promptText="Usuario" style="-fx-background-radius: 11;">
+            <TextField fx:id="user_field" promptText="Usuario" style="-fx-background-radius: 11;" styleClass="FieldsLogin" stylesheets="@css/styles.css">
                <VBox.margin>
                   <Insets bottom="20.0" top="20.0" />
                </VBox.margin>
@@ -44,7 +44,7 @@
             </PasswordField>
             <HBox alignment="CENTER" prefHeight="32.0" prefWidth="181.0" spacing="20.0">
                <children>
-                  <Button fx:id="login_button" mnemonicParsing="false" onAction="#switchMenu" styleClass="greenbutton" stylesheets="@css/styles.css" text="Ingresar" textFill="WHITE">
+                  <Button fx:id="login_button" mnemonicParsing="false" onAction="#switchMenu" onMouseEntered="#infocusanimated" onMouseExited="#nofocusanimated" styleClass="greenbutton" stylesheets="@css/styles.css" text="Ingresar" textFill="WHITE">
                      <font>
                         <Font name="Arial Black" size="12.0" />
                      </font>
@@ -52,7 +52,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button fx:id="close_button" mnemonicParsing="false" style="-fx-background-radius: 11; -fx-background-color: #FFFFFF;" text="Cancelar">
+                  <Button fx:id="close_button" mnemonicParsing="false" style="-fx-background-radius: 11; -fx-background-color: #FFFFFF;" text="Registrarse">
                      <font>
                         <Font name="Arial Black" size="12.0" />
                      </font>
@@ -67,12 +67,12 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Label prefHeight="15.0" prefWidth="113.0" text="Aun no tiene una cuenta." textFill="WHITE">
+                  <Label prefHeight="15.0" prefWidth="113.0" text="Olvidaste tu contraseña" textFill="WHITE">
                      <font>
                         <Font name="Arial Black" size="8.0" />
                      </font>
                   </Label>
-                  <Label fx:id="registration_inicio_button" prefHeight="15.0" prefWidth="48.0" text="Registrese" textFill="#60bf81">
+                  <Label fx:id="registration_inicio_button" prefHeight="15.0" prefWidth="48.0" text="Click aqui" textFill="#60bf81">
                      <font>
                         <Font name="Arial Black" size="8.0" />
                      </font>

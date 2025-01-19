@@ -8,9 +8,10 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import sistemas.biblioteca.App;
+import sistemas.biblioteca.script.animaciones_predefinidas;
 
 
-public class Login {
+public class Login  extends animaciones_predefinidas{
 
     @FXML
     private TextField user_field;
@@ -30,5 +31,17 @@ public class Login {
         App.setRoot("secondary");
         punteroStage.sizeToScene();
         punteroStage.centerOnScreen();
-    }    
+        
+    }
+
+    @FXML
+    public void infocusanimated() {
+        infocus(login_button);    
+    }
+    
+    @FXML
+    public void nofocusanimated() {
+        nofocus(login_button);    
+    }
+
 }
