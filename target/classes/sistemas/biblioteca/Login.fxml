@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
@@ -27,30 +28,38 @@
       </ImageView>
       <VBox alignment="TOP_CENTER" prefHeight="277.0" prefWidth="221.0">
          <children>
-            <Label styleClass="titlebienvenido" stylesheets="@css/styles.css" text="Bienvenido" textFill="WHITE">
+            <Label stylesheets="@css/styles.css" text="Bienvenido">
                <font>
                   <Font name="Arial Black" size="22.0" />
                </font>
+               <styleClass>
+                  <String fx:value="titles" />
+                  <String fx:value="bienvenido" />
+               </styleClass>
             </Label>
-            <TextField fx:id="user_field" promptText="Usuario" style="-fx-background-radius: 11;" styleClass="FieldsLogin" stylesheets="@css/styles.css">
+            <TextField fx:id="user_field" promptText="Usuario" styleClass="FieldsLogin" stylesheets="@css/styles.css">
                <VBox.margin>
                   <Insets bottom="20.0" top="20.0" />
                </VBox.margin>
             </TextField>
-            <PasswordField fx:id="pass_field" promptText="Contraseña" style="-fx-background-radius: 11;">
+            <PasswordField fx:id="pass_field" promptText="Contraseña" styleClass="FieldsLogin" stylesheets="@css/styles.css">
                <VBox.margin>
                   <Insets bottom="20.0" />
                </VBox.margin>
             </PasswordField>
             <HBox alignment="CENTER" prefHeight="32.0" prefWidth="181.0" spacing="20.0">
                <children>
-                  <Button fx:id="login_button" mnemonicParsing="false" onAction="#switchMenu" onMouseEntered="#infocusanimated" onMouseExited="#nofocusanimated" styleClass="greenbutton" stylesheets="@css/styles.css" text="Ingresar" textFill="WHITE">
+                  <Button fx:id="login_button" mnemonicParsing="false" onAction="#switchMenu" onMouseEntered="#infocusanimated" onMouseExited="#nofocusanimated" stylesheets="@css/styles.css" text="Ingresar" textFill="WHITE">
                      <font>
                         <Font name="Arial Black" size="12.0" />
                      </font>
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
+                     <styleClass>
+                        <String fx:value="color_fondo01" />
+                        <String fx:value="greenbutton" />
+                     </styleClass>
                   </Button>
                   <Button fx:id="close_button" mnemonicParsing="false" style="-fx-background-radius: 11; -fx-background-color: #FFFFFF;" text="Registrarse">
                      <font>

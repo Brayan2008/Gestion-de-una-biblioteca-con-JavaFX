@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="490.0" prefWidth="778.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sistemas.biblioteca.controllers.principal">
+   <children>
+      <VBox alignment="BOTTOM_CENTER" prefHeight="490.0" prefWidth="69.0" spacing="17.0" styleClass="color_fondo02" stylesheets="@css/styles.css">
+         <children>
+            <ImageView fx:id="home_icon" fitHeight="40.0" fitWidth="40.0" onMouseEntered="#infocusanimated_home" onMouseExited="#nofocusanimated_home" pickOnBounds="true" preserveRatio="true">
+               <VBox.margin>
+                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+               </VBox.margin>
+               <image>
+                  <Image url="@media/pagina-de-inicio.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="chat_icon" fitHeight="40.0" fitWidth="40.0" onMouseEntered="#infocusanimated_chat" onMouseExited="#nofocusanimated_chat" pickOnBounds="true" preserveRatio="true">
+               <VBox.margin>
+                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+               </VBox.margin>
+               <image>
+                  <Image url="@media/chat.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="register_icon" fitHeight="40.0" fitWidth="40.0" onMouseEntered="#infocusanimated_register" onMouseExited="#nofocusanimated_register" pickOnBounds="true" preserveRatio="true">
+               <VBox.margin>
+                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+               </VBox.margin>
+               <image>
+                  <Image url="@media/verificar.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="books_icon" fitHeight="40.0" fitWidth="40.0" onMouseClicked="#switchPrestamo" onMouseEntered="#infocusanimated_books" onMouseExited="#nofocusanimated_books" pickOnBounds="true" preserveRatio="true">
+               <VBox.margin>
+                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+               </VBox.margin>
+               <image>
+                  <Image url="@media/book-icon.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="settings_icon" fitHeight="40.0" fitWidth="40.0" onMouseEntered="#infocusanimated_config" onMouseExited="#nofocusanimated_config" pickOnBounds="true" preserveRatio="true">
+               <VBox.margin>
+                  <Insets left="4.0" right="4.0" top="4.0" />
+               </VBox.margin>
+               <image>
+                  <Image url="@media/config-icon.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <Separator nodeOrientation="LEFT_TO_RIGHT" prefWidth="200.0" visible="false" />
+            <ImageView fx:id="user_icon" fitHeight="50.0" fitWidth="50.0" onMouseEntered="#infocusanimated_user" onMouseExited="#nofocusanimated_user" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@media/user-icon.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <VBox.margin>
+                  <Insets bottom="15.0" left="4.0" right="4.0" />
+               </VBox.margin>
+            </ImageView>
+         </children>
+      </VBox>
+      <VBox prefHeight="490.0" prefWidth="708.0" HBox.hgrow="SOMETIMES">
+         <children>
+            <HBox alignment="CENTER_RIGHT" prefHeight="96.0" prefWidth="709.0">
+               <children>
+                  <VBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="230.0">
+                     <children>
+                        <Label styleClass="titles" stylesheets="@css/styles.css" text="Hola" textAlignment="RIGHT" />
+                        <Label styleClass="titles" stylesheets="@css/styles.css" text="User000" textAlignment="RIGHT" />
+                     </children>
+                     <padding>
+                        <Insets bottom="8.0" left="14.0" right="14.0" top="8.0" />
+                     </padding>
+                  </VBox>
+               </children>
+            </HBox>
+            <BorderPane prefHeight="225.0" prefWidth="709.0" />
+         </children>
+      </VBox>
+   </children>
+</HBox>

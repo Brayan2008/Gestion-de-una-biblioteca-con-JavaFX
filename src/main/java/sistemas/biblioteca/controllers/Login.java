@@ -28,10 +28,10 @@ public class Login  extends animaciones_predefinidas{
 
     @FXML
     public void switchMenu() throws IOException {
-        App.setRoot("secondary");
+        App.setRoot("principal");
         punteroStage.sizeToScene();
+        punteroStage.setResizable(true);
         punteroStage.centerOnScreen();
-        
     }
 
     @FXML
