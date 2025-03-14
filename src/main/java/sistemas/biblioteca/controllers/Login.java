@@ -24,7 +24,7 @@ public class Login  extends animaciones_predefinidas{
     @FXML
     private Label registration_inicio_button;
 
-    private Stage punteroStage = App.puntero1Stage;
+    protected static Stage punteroStage = App.puntero1Stage;
 
     @FXML
     public void switchMenu() throws IOException {
@@ -34,6 +34,7 @@ public class Login  extends animaciones_predefinidas{
         punteroStage.centerOnScreen();
     }
 
+    //#region Animaciones
     @FXML
     public void infocusanimated() {
         infocus(login_button);    
@@ -43,5 +44,6 @@ public class Login  extends animaciones_predefinidas{
     public void nofocusanimated() {
         nofocus(login_button);    
     }
+    //#endregion
 
 }

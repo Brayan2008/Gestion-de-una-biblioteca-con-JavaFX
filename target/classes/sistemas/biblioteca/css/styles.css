@@ -1,5 +1,4 @@
 /*Archivo CSS personalizado para los componentes de JavaFX */
-
 /* Clase titulo  */
 .titles {
     -fx-font-size: 23;
@@ -18,9 +17,12 @@
 }
 
 .color_fondo02{
-    -fx-background-color: #005C53;
+    -fx-background-color: #042940;
 }
 
+.color_fondo03{
+    -fx-background-color: #005C53;
+}
 /* Clase boton */
 .greenbutton {
     -fx-background-radius: 11;
@@ -35,4 +37,7 @@
 /*Clase para los campos de ingreso */
 .FieldsLogin{
     -fx-background-radius: 11;
+}
+.FieldsLogin#search{
+    -fx-prompt-text-fill: black;
 }

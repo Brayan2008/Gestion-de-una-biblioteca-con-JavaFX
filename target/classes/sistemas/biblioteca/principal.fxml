@@ -14,11 +14,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.paint.Color?>
 
-<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="490.0" prefWidth="778.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sistemas.biblioteca.controllers.principal">
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="490.0" minWidth="400.0" prefHeight="490.0" prefWidth="778.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sistemas.biblioteca.controllers.principal">
    <children>
-      <VBox alignment="BOTTOM_CENTER" prefHeight="490.0" prefWidth="69.0" spacing="17.0" styleClass="color_fondo02" stylesheets="@css/styles.css">
+      <VBox alignment="BOTTOM_CENTER" prefHeight="490.0" prefWidth="0.0" spacing="12.0" styleClass="color_fondo02" stylesheets="@css/styles.css">
          <children>
-            <ImageView fx:id="home_icon" fitHeight="40.0" fitWidth="40.0" onMouseEntered="#infocusanimated_home" onMouseExited="#nofocusanimated_home" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="home_icon" fitHeight="40.0" fitWidth="40.0" onMouseClicked="#switchHome" onMouseEntered="#infocusanimated_home" onMouseExited="#nofocusanimated_home" pickOnBounds="true" preserveRatio="true" scaleX="0.8" scaleY="0.8">
                <VBox.margin>
                   <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
                </VBox.margin>
@@ -29,7 +29,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </ImageView>
-            <ImageView fx:id="chat_icon" fitHeight="40.0" fitWidth="40.0" onMouseEntered="#infocusanimated_chat" onMouseExited="#nofocusanimated_chat" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="chat_icon" fitHeight="40.0" fitWidth="40.0" onMouseEntered="#infocusanimated_chat" onMouseExited="#nofocusanimated_chat" pickOnBounds="true" preserveRatio="true" scaleX="0.8" scaleY="0.8">
                <VBox.margin>
                   <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
                </VBox.margin>
@@ -40,7 +40,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </ImageView>
-            <ImageView fx:id="register_icon" fitHeight="40.0" fitWidth="40.0" onMouseEntered="#infocusanimated_register" onMouseExited="#nofocusanimated_register" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="register_icon" fitHeight="40.0" fitWidth="40.0" onMouseEntered="#infocusanimated_register" onMouseExited="#nofocusanimated_register" pickOnBounds="true" preserveRatio="true" scaleX="0.8" scaleY="0.8">
                <VBox.margin>
                   <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
                </VBox.margin>
@@ -51,7 +51,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </ImageView>
-            <ImageView fx:id="books_icon" fitHeight="40.0" fitWidth="40.0" onMouseClicked="#switchPrestamo" onMouseEntered="#infocusanimated_books" onMouseExited="#nofocusanimated_books" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="books_icon" fitHeight="40.0" fitWidth="40.0" onMouseClicked="#switchPrestamo" onMouseEntered="#infocusanimated_books" onMouseExited="#nofocusanimated_books" pickOnBounds="true" preserveRatio="true" scaleX="0.8" scaleY="0.8">
                <VBox.margin>
                   <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
                </VBox.margin>
@@ -62,7 +62,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </ImageView>
-            <ImageView fx:id="settings_icon" fitHeight="40.0" fitWidth="40.0" onMouseEntered="#infocusanimated_config" onMouseExited="#nofocusanimated_config" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="settings_icon" fitHeight="40.0" fitWidth="40.0" onMouseEntered="#infocusanimated_config" onMouseExited="#nofocusanimated_config" pickOnBounds="true" preserveRatio="true" scaleX="0.8" scaleY="0.8">
                <VBox.margin>
                   <Insets left="4.0" right="4.0" top="4.0" />
                </VBox.margin>
@@ -74,7 +74,7 @@
                </cursor>
             </ImageView>
             <Separator nodeOrientation="LEFT_TO_RIGHT" prefWidth="200.0" visible="false" />
-            <ImageView fx:id="user_icon" fitHeight="50.0" fitWidth="50.0" onMouseEntered="#infocusanimated_user" onMouseExited="#nofocusanimated_user" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="user_icon" fitHeight="50.0" fitWidth="50.0" onMouseEntered="#infocusanimated_user" onMouseExited="#nofocusanimated_user" pickOnBounds="true" preserveRatio="true" scaleX="0.8" scaleY="0.8">
                <image>
                   <Image url="@media/user-icon.png" />
                </image>
@@ -87,14 +87,22 @@
             </ImageView>
          </children>
       </VBox>
-      <VBox prefHeight="490.0" prefWidth="708.0" HBox.hgrow="SOMETIMES">
+      <VBox prefHeight="490.0" prefWidth="708.0" HBox.hgrow="ALWAYS">
          <children>
-            <HBox alignment="CENTER_RIGHT" prefHeight="96.0" prefWidth="709.0">
+            <HBox alignment="CENTER_RIGHT" prefHeight="96.0" prefWidth="709.0" styleClass="color_fondo03" stylesheets="@css/styles.css">
                <children>
                   <VBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="230.0">
                      <children>
-                        <Label styleClass="titles" stylesheets="@css/styles.css" text="Hola" textAlignment="RIGHT" />
-                        <Label styleClass="titles" stylesheets="@css/styles.css" text="User000" textAlignment="RIGHT" />
+                        <Label stylesheets="@css/styles.css" text="Hola" textAlignment="RIGHT">
+                           <styleClass>
+                              <String fx:value="titles" />
+                              <String fx:value="bienvenido" />
+                           </styleClass></Label>
+                        <Label stylesheets="@css/styles.css" text="User000" textAlignment="RIGHT">
+                           <styleClass>
+                              <String fx:value="titles" />
+                              <String fx:value="bienvenido" />
+                           </styleClass></Label>
                      </children>
                      <padding>
                         <Insets bottom="8.0" left="14.0" right="14.0" top="8.0" />
@@ -102,9 +110,9 @@
                   </VBox>
                </children>
             </HBox>
-            <ScrollPane fitToWidth="true" hbarPolicy="NEVER" prefHeight="200.0" prefWidth="200.0" vmin="1.0E-4" VBox.vgrow="ALWAYS">
+            <ScrollPane fx:id="content_pane" fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" minViewportWidth="700.0" prefViewportWidth="720.0" VBox.vgrow="ALWAYS">
                <content>
-                  <VBox>
+                  <VBox fx:id="inicio_box">
                      <children>
                         <HBox alignment="CENTER" prefHeight="223.0" prefWidth="686.0" spacing="20.0" styleClass="panel" stylesheets="@css/menu.css" VBox.vgrow="NEVER">
                            <children>
@@ -199,6 +207,9 @@
                      </children>
                   </VBox>
                </content>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
             </ScrollPane>
          </children>
       </VBox>

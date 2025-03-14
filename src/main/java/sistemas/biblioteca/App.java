@@ -16,6 +16,10 @@ public class App extends Application {
     public static Stage puntero1Stage;
     private static Scene scene;
 
+    public static void main(String[] args) {
+        launch();
+    }
+
     public static void escena(String fxml) throws IOException {
         scene = new Scene(loadFXML(fxml));
     }
@@ -24,12 +28,12 @@ public class App extends Application {
     public void init() throws Exception {
         super.init();
         System.out.println("Inicie la aplicacion");
-    } 
+    }
 
     @Override
     public void start(Stage stage1) throws IOException {
         puntero1Stage = stage1;
-        escena("Login");    
+        escena("Login");
         stage1.sizeToScene();
         stage1.setTitle("Sistema de biblioteca");
         stage1.centerOnScreen();
@@ -47,10 +51,6 @@ public class App extends Application {
         return fxmlLoader.load();
     }
 
-    public static void main(String[] args) {
-        launch();
-    }
-   
     @Override
     public void stop() throws Exception {
         super.stop();
