@@ -4,11 +4,9 @@ import javafx.animation.ScaleTransition;
 import javafx.scene.Node;
 import javafx.util.Duration;
 
-public abstract class animaciones_predefinidas {
+public interface animaciones_predefinidas {
     
-    
-
-    public void nofocus(Node a) {
+    default public void nofocus(Node a) {
         ScaleTransition transition = new ScaleTransition(Duration.seconds(0.2));
         transition.setNode(a);
         transition.setFromX(1.1);
@@ -18,7 +16,7 @@ public abstract class animaciones_predefinidas {
         transition.play();
     }
     
-    public void infocus(Node a) {
+    default void infocus(Node a) {
         ScaleTransition transition = new ScaleTransition(Duration.seconds(0.2));
         transition.setNode(a);
         transition.setFromX(0.9);
@@ -28,6 +26,5 @@ public abstract class animaciones_predefinidas {
         transition.setAutoReverse(true);
         transition.play();
     }
-
 
 }

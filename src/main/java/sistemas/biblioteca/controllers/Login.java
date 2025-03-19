@@ -1,6 +1,7 @@
 package sistemas.biblioteca.controllers;
 
 import java.io.IOException;
+import java.util.Collection;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -11,7 +12,7 @@ import sistemas.biblioteca.App;
 import sistemas.biblioteca.script.animaciones_predefinidas;
 
 
-public class Login  extends animaciones_predefinidas{
+public class Login  implements animaciones_predefinidas{
 
     @FXML
     private TextField user_field;
