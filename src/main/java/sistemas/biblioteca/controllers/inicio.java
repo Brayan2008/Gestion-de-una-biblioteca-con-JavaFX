@@ -3,7 +3,6 @@ package sistemas.biblioteca.controllers;
 import javafx.fxml.FXML;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
 import sistemas.biblioteca.script.animaciones_predefinidas;
 
 public class inicio implements animaciones_predefinidas {
@@ -13,9 +12,6 @@ public class inicio implements animaciones_predefinidas {
     @FXML
     ImageView chat_button, books_button, weather_button;
     
-    @FXML
-    VBox inicio_box;
-
     //#region Animaciones
     @FXML
     public void infocusanimated_booksButton() {
@@ -55,7 +51,7 @@ public class inicio implements animaciones_predefinidas {
         nofocus(chat_button);
     }
     //#endregion
-
+    
     //#region Switches
     
     //#endregion

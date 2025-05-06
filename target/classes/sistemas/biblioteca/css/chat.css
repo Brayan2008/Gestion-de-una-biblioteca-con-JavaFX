@@ -1,0 +1,10 @@
+.user_box{
+    -fx-font-weight: 800;
+    -fx-font-size: 13;
+    -fx-text-fill: black;   
+}
+
+.user_box:hover{
+        -fx-background-color: #d2dad5;
+        -fx-background-radius: 11;
+}

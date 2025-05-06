@@ -1,7 +1,6 @@
 package sistemas.biblioteca.controllers;
 
 import java.io.IOException;
-import java.util.Collection;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;

@@ -31,8 +31,25 @@
 }
 .greenbutton:hover {
     -fx-background-color: black;
-    -fx-animated: true;
+    -fx-text-fill: white;
 }
+/* Para los menu , son clases predefinidas*/
+.context-menu{
+    -fx-background-color: #005C53;
+    -fx-background-radius: 7;
+}
+
+.menu-item .label{
+    -fx-text-fill: white;
+}
+
+.menu-item:focused{ /* Esto es similar a :hover. tiene 3 estados, sin focus, hover, y focused */
+    -fx-cursor: hand;
+    -fx-background-color: #60BF81;
+    -fx-text-fill: white;
+    -fx-font-weight: 800;
+}
+/* Fin */
 
 /*Clase para los campos de ingreso */
 .FieldsLogin{
