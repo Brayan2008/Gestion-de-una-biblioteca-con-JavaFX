@@ -1,9 +1,0 @@
-/* CSS para el menu principal */
-
-.panel{
-    -fx-background-image: url("../media/fondo_biblioteca.jpg");
-    -fx-background-repeat: no-repeat;
-    -fx-background-position: center;
-    -fx-background-size: cover;
-}
-

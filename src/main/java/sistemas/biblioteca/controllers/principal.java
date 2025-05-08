@@ -16,14 +16,13 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import sistemas.biblioteca.App;
-import sistemas.biblioteca.model.Usuario;
 import sistemas.biblioteca.script.animaciones_predefinidas;
-import sistemas.biblioteca.services.CRUDService;
 import sistemas.biblioteca.services.chatServiceImpl;
+import sistemas.biblioteca.services.interfaces.chatService;
 
 public class principal implements animaciones_predefinidas{
 
-    CRUDService<Usuario> service = new chatServiceImpl();
+    chatService service = new chatServiceImpl();
 
 
     /* Barra */
@@ -58,8 +57,9 @@ public class principal implements animaciones_predefinidas{
                 vista3 = new FXMLLoader(App.class.getResource("/sistemas/biblioteca/view/chat.fxml")).load();
                 vista5 = new FXMLLoader(App.class.getResource("/sistemas/biblioteca/view/configuracion.fxml")).load();
                 System.out.println("Se precargo al vista 1 y 3 ");
-            } catch (IOException e) {
-            Logger.getLogger(this.getClass().getName()).severe("Error al cargar las vistas 1, 3 o 5" + e);
+            } catch (IOException e) {   
+            Logger.getLogger(this.getClass().getName()).severe("Error al cargar las vistas 1, 3 o 5");
+            e.printStackTrace();
         }
     });
     Thread hilo2 = new Thread(()->{
@@ -157,9 +157,9 @@ public class principal implements animaciones_predefinidas{
         content_pane.getChildren().clear();
         content_pane.getChildren().add(vista1);
     }
-    
+
     @FXML
-    public void switchChat() throws IOException{
+    public void switchChat(){
         try {
             service.GET();   
         } catch (Exception e) {

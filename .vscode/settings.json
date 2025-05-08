@@ -1,4 +1,13 @@
 {
     "java.configuration.updateBuildConfiguration": "automatic",
-    "maven.view": "flat"
+    "maven.view": "flat",
+    "github.copilot.enable": {
+        "*": true,
+        "plaintext": false,
+        "markdown": false,
+        "scminput": false
+    },
+    "java.project.explorer.showNonJavaResources": false,
+    "java.dependency.syncWithFolderExplorer": true,
+    "java.dependency.packagePresentation": "flat"
 }
