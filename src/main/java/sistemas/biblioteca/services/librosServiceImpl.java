@@ -38,9 +38,7 @@ import sistemas.biblioteca.services.interfaces.librosService;
 
 public class librosServiceImpl implements librosService, animaciones_predefinidas {
 
-    BehaviorSubject<Libros> libros = BehaviorSubject.create();
- 
-
+    
     @Override
     public List<Libros> GET() {
         HttpClient client = HttpClient.newHttpClient();
@@ -66,6 +64,7 @@ public class librosServiceImpl implements librosService, animaciones_predefinida
         if (!dir.exists()) dir.mkdirs();
         //Ponemos las imagenes
         try {
+            BehaviorSubject<Libros> libros = BehaviorSubject.create();
             Observable<Libros> libros_list = Observable.fromIterable(GET());
             libros.subscribe(libro->ADD(libro, lista));
             libros_list.subscribe(libros::onNext);
@@ -80,7 +79,6 @@ public class librosServiceImpl implements librosService, animaciones_predefinida
 
     }
        
-    
     @Override
     public void ADD(Libros libro, Pane lista) {
             

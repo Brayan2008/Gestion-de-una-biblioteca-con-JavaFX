@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
@@ -22,15 +25,26 @@
                   <Insets bottom="10.0" left="6.0" top="10.0" />
                </padding>
             </TextField>
-            <MenuButton mnemonicParsing="false" prefHeight="42.0" prefWidth="46.0" style="-fx-background-color: green;" styleClass="greenbutton" stylesheets="@../css/styles.css" HBox.hgrow="ALWAYS">
+            <MenuButton mnemonicParsing="false" prefHeight="30.0" prefWidth="0.0" style="-fx-background-color: green;" styleClass="greenbutton" stylesheets="@../css/styles.css" HBox.hgrow="ALWAYS">
                <items>
                   <MenuItem mnemonicParsing="false" text="Action 1" />
                   <MenuItem mnemonicParsing="false" text="Action 2" />
                </items>
                <HBox.margin>
-                  <Insets right="60.0" />
+                  <Insets />
                </HBox.margin>
             </MenuButton>
+            <ImageView fx:id="reload" fitHeight="35.0" fitWidth="30.0" onMouseClicked="#actualizar_libros" pickOnBounds="true" preserveRatio="true">
+               <HBox.margin>
+                  <Insets right="60.0" />
+               </HBox.margin>
+               <image>
+                  <Image url="@../media/menu_chat/chat_button.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
          </children>
       </HBox>
       <FlowPane fx:id="lista_libros" hgap="12.0" prefHeight="288.0" prefWidth="460.0" vgap="12.0">

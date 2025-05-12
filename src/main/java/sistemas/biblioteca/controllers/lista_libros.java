@@ -7,10 +7,16 @@ import sistemas.biblioteca.services.interfaces.librosService;
 
 public class lista_libros {
 
+    librosService libro = new librosServiceImpl();
+
     @FXML
     FlowPane lista_libros;
 
-    librosService libro = new librosServiceImpl();
+    @FXML
+    public void actualizar_libros() {
+        lista_libros.getChildren().clear();
+        libro.COLOCAR(lista_libros);
+    }
 
     @FXML
     public void initialize() {

@@ -1,20 +1,29 @@
 package sistemas.biblioteca.controllers;
 
 import java.io.IOException;
-import java.util.logging.Logger;
+import java.net.URISyntaxException;
 
+import javafx.application.Platform;
+import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Pos;
 import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.Label;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.effect.GaussianBlur;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import sistemas.biblioteca.App;
 import sistemas.biblioteca.script.animaciones_predefinidas;
 import sistemas.biblioteca.services.chatServiceImpl;
@@ -23,7 +32,6 @@ import sistemas.biblioteca.services.interfaces.chatService;
 public class principal implements animaciones_predefinidas{
 
     chatService service = new chatServiceImpl();
-
 
     /* Barra */
     @FXML
@@ -43,41 +51,49 @@ public class principal implements animaciones_predefinidas{
     
     Node vista1, vista2, vista3, vista4,vista5;
     
-    //#region Initialization
+//#region Initialization
     /**
      * Metodo que se ejecuta al iniciar la aplicacion
      * <p> Carga las vistas de inicio y verLibros </p>
      * @throws InterruptedException en caso de que se interrumpan los hilos
      */
     @FXML
-    public void initialize() throws InterruptedException {
-        Thread hilo = new Thread(()->{
-            try {
-                vista1 = new FXMLLoader(App.class.getResource("/sistemas/biblioteca/view/inicio.fxml")).load();
-                vista3 = new FXMLLoader(App.class.getResource("/sistemas/biblioteca/view/chat.fxml")).load();
-                vista5 = new FXMLLoader(App.class.getResource("/sistemas/biblioteca/view/configuracion.fxml")).load();
-                System.out.println("Se precargo al vista 1 y 3 ");
-            } catch (IOException e) {   
-            Logger.getLogger(this.getClass().getName()).severe("Error al cargar las vistas 1, 3 o 5");
-            e.printStackTrace();
-        }
-    });
-    Thread hilo2 = new Thread(()->{
-        try {
-            vista2 = new FXMLLoader(App.class.getResource("/sistemas/biblioteca/view/verLibros.fxml")).load();
+    public void initialize() throws InterruptedException, URISyntaxException {
+    var nodo_padre = pantalla_principal.getParent();
+    nodo_padre.setEffect(new GaussianBlur(10));
+    nodo_padre.setDisable(true);
+
+    Stage stage_load = pantallaCarga();
+
+    Task<String> carga = new Task<String>() {
+        @Override
+        protected String call() throws Exception {
+            vista1 = new FXMLLoader(App.class.getResource("/sistemas/biblioteca/view/inicio.fxml")).load();
+            vista2 = new FXMLLoader(App.class.getResource("/sistemas/biblioteca/view/verLibros.fxml")).load();            
+            vista3 = new FXMLLoader(App.class.getResource("/sistemas/biblioteca/view/chat.fxml")).load();
             vista4 = new FXMLLoader(App.class.getResource("/sistemas/biblioteca/view/verListaPrestados.fxml")).load();
-            System.out.println("Se precargo al vista 2");
-        } catch (IOException e) {
-            Logger.getLogger(this.getClass().getName()).severe("Error al cargar las vistas 2 o 4 "); 
-            e.printStackTrace();
-            }
-        });         
-        hilo.start();
-        hilo.join();
-        hilo2.start();
-        hilo2.join();
-        content_pane.getChildren().add(vista1);
-    }
+            vista5 = new FXMLLoader(App.class.getResource("/sistemas/biblioteca/view/configuracion.fxml")).load();            
+            Platform.runLater(() -> content_pane.getChildren().add(vista1));
+            return null;
+        }};
+    
+        carga.setOnFailed(e -> {
+            Platform.runLater(() ->{
+                Alert error = new Alert(AlertType.ERROR);
+                error.setTitle("Error");
+                error.setContentText("No se pudieron cargar todas las vistas");
+                error.showAndWait();
+            });
+        });
+
+        carga.setOnSucceeded(e -> {nodo_padre.setEffect(new GaussianBlur(0));
+                                   nodo_padre.setDisable(false); 
+                                   stage_load.close();});
+
+        new Thread(carga).start();
+        
+    };
+    
     //#endregion
 
 //#region Animaciones  
@@ -213,7 +229,8 @@ public class principal implements animaciones_predefinidas{
 
 
 //#endregion
-    
+
+//#region Metodos
     public void agregarScroll() {
         scroll_pane = new ScrollPane(content_pane);
     
@@ -228,5 +245,24 @@ public class principal implements animaciones_predefinidas{
         var a = pantalla_principal.getChildren(); //
         a.set(a.size()-1, scroll_pane);
     }
+
+    public Stage pantallaCarga(){
+        ImageView load_image = new ImageView(getClass().getResource("/sistemas/biblioteca/media/principal/loading.gif").toString());
+        load_image.setFitWidth(100);
+        load_image.setFitHeight(100);
+        Label text_loading = new Label("Resolviendo y calculando ...");
+        text_loading.setAlignment(Pos.CENTER);
+        text_loading.setFont(new Font("Aptos",14));
+        VBox loading = new VBox(load_image, text_loading);
+        loading.setAlignment(Pos.CENTER);
+        Stage stage_load = new Stage();
+        Scene scene_loading = new Scene(loading);
+        stage_load.initStyle(StageStyle.UNDECORATED);
+        stage_load.setScene(scene_loading);
+        stage_load.centerOnScreen();
+        stage_load.show();
+        return stage_load;
+    }
+//#endregion
 
 }
